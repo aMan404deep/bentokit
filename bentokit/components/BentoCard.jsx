@@ -1,6 +1,6 @@
 // components/BentoCard.jsx
 import React from 'react';
-import './bentokit.css';
+import '../styles/bentokit.css';
 
 const BentoCard = ({ title, description, icon, style, className, children }) => {
   return (

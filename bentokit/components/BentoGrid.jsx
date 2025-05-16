@@ -1,6 +1,6 @@
 // components/BentoGrid.jsx
 import React from 'react';
-import './bentokit.css';
+import '../styles/bentokit.css';
 
 const BentoGrid = ({ columns = 3, gap = '1rem', style, className, children }) => {
   const gridStyle = {

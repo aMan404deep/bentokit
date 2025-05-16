@@ -1,6 +1,6 @@
 // components/BentoButton.jsx
 import React from 'react';
-import './bentokit.css';
+import '../styles/bentokit.css';
 
 const BentoButton = ({ label, onClick, type = 'button', style, className }) => {
   return (

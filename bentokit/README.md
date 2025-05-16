@@ -14,7 +14,7 @@ A lightweight, fully customizable Bento-style UI library you can use in **HTML**
 ## 📦 Installation
 
 ```bash
-npm install bentokit
+npm install bentokitui
 ```
 
 ## 🛠 Usage

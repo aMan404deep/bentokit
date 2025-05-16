@@ -1,6 +1,6 @@
 // components/BentoImage.jsx
 import React from 'react';
-import './bentokit.css';
+import '../styles/bentokit.css';
 
 const BentoImage = ({ src, alt, style, className }) => {
   return (

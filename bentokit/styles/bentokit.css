@@ -1,0 +1,76 @@
+/* Global design tokens */
+:root {
+  --bento-radius: 16px;
+  --bento-bg: #1e1e1e;
+  --bento-hover-bg: #2a2a2a;
+  --bento-border: #333;
+  --bento-text: #fff;
+  --bento-muted: #aaa;
+  --bento-accent: #4ade80;
+}
+
+/* BentoCard */
+.bento-card {
+  background-color: var(--bento-bg);
+  color: var(--bento-text);
+  border-radius: var(--bento-radius);
+  padding: 1.5rem;
+  border: 1px solid var(--bento-border);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.bento-card:hover {
+  background-color: var(--bento-hover-bg);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.bento-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.bento-description {
+  font-size: 1rem;
+  color: var(--bento-muted);
+}
+
+.bento-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* BentoButton */
+.bento-button {
+  background-color: var(--bento-accent);
+  color: black;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bento-button:hover {
+  background-color: #22c55e;
+  transform: scale(1.05);
+}
+
+/* BentoImage */
+.bento-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--bento-radius);
+  border: 2px solid var(--bento-border);
+  object-fit: cover;
+}
+
+/* BentoGrid */
+.bento-grid {
+  width: 100%;
+  margin: 0 auto;
+}
