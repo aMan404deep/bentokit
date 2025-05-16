@@ -640,195 +640,133 @@
   transform: rotate(2deg);
 }
 
-/* BentoDivider Component Styles */
 .bento-divider {
-  width: 100%;
-  border: none;
   position: relative;
-}
-
-.bento-divider.horizontal {
-  height: 1px;
+  border: none;
   margin: 1rem 0;
 }
 
-.bento-divider.vertical {
-  width: 1px;
+.bento-divider-horizontal {
+  width: 100%;
+  border-top-style: solid;
+  border-top-color: var(--bento-border);
+}
+
+.bento-divider-vertical {
   height: 100%;
+  border-left-style: solid;
+  border-left-color: var(--bento-border);
   margin: 0 1rem;
   display: inline-block;
 }
 
-.bento-divider.default {
-  background-color: var(--bento-border-color, rgba(200, 200, 200, 0.3));
+
+.bento-divider-dashed {
+  border-top-style: dashed;
+  border-left-style: dashed;
 }
 
-.bento-divider.dashed {
-  background: linear-gradient(to right, 
-    var(--bento-border-color, rgba(200, 200, 200, 0.3)) 50%, 
-    transparent 50%);
-  background-size: 16px 1px;
-  background-repeat: repeat-x;
+.bento-divider-dotted {
+  border-top-style: dotted;
+  border-left-style: dotted;
 }
 
-.bento-divider.vertical.dashed {
-  background: linear-gradient(to bottom, 
-    var(--bento-border-color, rgba(200, 200, 200, 0.3)) 50%, 
-    transparent 50%);
-  background-size: 1px 16px;
-  background-repeat: repeat-y;
+.bento-divider-gradient {
+  /* The gradient is applied via the borderImage property in React component */
 }
 
-.bento-divider.dotted {
-  background: linear-gradient(to right, 
-    var(--bento-border-color, rgba(200, 200, 200, 0.3)) 50%, 
-    transparent 50%);
-  background-size: 4px 1px;
-  background-repeat: repeat-x;
-}
-
-.bento-divider.vertical.dotted {
-  background: linear-gradient(to bottom, 
-    var(--bento-border-color, rgba(200, 200, 200, 0.3)) 50%, 
-    transparent 50%);
-  background-size: 1px 4px;
-  background-repeat: repeat-y;
-}
-
-.bento-divider.gradient {
-  background: linear-gradient(to right, 
-    transparent, 
-    var(--bento-accent-color, #5a67d8), 
-    transparent);
-}
-
-.bento-divider.vertical.gradient {
-  background: linear-gradient(to bottom, 
-    transparent, 
-    var(--bento-accent-color, #5a67d8), 
-    transparent);
-}
-
-.bento-divider-text-container {
+.bento-divider-with-text {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  border-width: 0;
+  text-align: center;
+}
+
+.bento-divider-with-text::before,
+.bento-divider-with-text::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--bento-border);
+}
+
+.bento-divider-with-text.bento-divider-gradient::before {
+  background: linear-gradient(to right, transparent, var(--bento-border));
+  height: 1px;
+}
+
+.bento-divider-with-text.bento-divider-gradient::after {
+  background: linear-gradient(to right, var(--bento-border), transparent);
+  height: 1px;
 }
 
 .bento-divider-text {
   padding: 0 1rem;
-  color: var(--bento-text-color, inherit);
+  color: var(--bento-muted);
   font-size: 0.875rem;
   white-space: nowrap;
 }
 
-.bento-divider-line {
-  flex-grow: 1;
-  height: 1px;
-}
-
-.bento-divider-line.default {
-  background-color: var(--bento-border-color, rgba(200, 200, 200, 0.3));
-}
-
-.bento-divider-line.dashed {
-  background: linear-gradient(to right, 
-    var(--bento-border-color, rgba(200, 200, 200, 0.3)) 50%, 
-    transparent 50%);
-  background-size: 16px 1px;
-  background-repeat: repeat-x;
-}
-
-.bento-divider-line.dotted {
-  background: linear-gradient(to right, 
-    var(--bento-border-color, rgba(200, 200, 200, 0.3)) 50%, 
-    transparent 50%);
-  background-size: 4px 1px;
-  background-repeat: repeat-x;
-}
-
-.bento-divider-line.gradient {
-  background: linear-gradient(to right, 
-    transparent, 
-    var(--bento-accent-color, #5a67d8));
-}
-
-.bento-divider-line.gradient:last-child {
-  background: linear-gradient(to right, 
-    var(--bento-accent-color, #5a67d8),
-    transparent);
-}
-
 /* BentoBadge Component Styles */
+.bento-badge-container {
+  position: relative;
+  display: inline-flex;
+}
+
 .bento-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
   font-weight: 600;
   line-height: 1;
-  border-radius: 9999px;
   white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   transition: all 0.2s ease;
 }
 
-.bento-badge.default {
-  background-color: var(--bento-primary-color, #6366f1);
-  color: var(--bento-primary-text, white);
+.bento-badge-filled {
+  background-color: var(--badge-color, var(--bento-accent));
+  color: #ffffff;
 }
 
-.bento-badge.secondary {
-  background-color: var(--bento-secondary-color, #ec4899);
-  color: var(--bento-secondary-text, white);
-}
-
-.bento-badge.tertiary {
-  background-color: var(--bento-tertiary-color, #f59e0b);
-  color: var(--bento-tertiary-text, white);
-}
-
-.bento-badge.outline {
+.bento-badge-outline {
   background-color: transparent;
-  border: 1px solid var(--bento-primary-color, #6366f1);
-  color: var(--bento-primary-color, #6366f1);
+  border: 1px solid var(--badge-color, var(--bento-accent));
+  color: var(--badge-color, var(--bento-accent));
 }
 
-.bento-badge.outline.secondary {
-  border-color: var(--bento-secondary-color, #ec4899);
-  color: var(--bento-secondary-color, #ec4899);
+.bento-badge-subtle {
+  background-color: rgba(74, 222, 128, 0.1);
+  color: var(--badge-color, var(--bento-accent));
 }
 
-.bento-badge.outline.tertiary {
-  border-color: var(--bento-tertiary-color, #f59e0b);
-  color: var(--bento-tertiary-color, #f59e0b);
+.bento-badge-small {
+  padding: 0.125rem 0.375rem;
+  font-size: 0.65rem;
 }
 
-.bento-badge.subtle {
-  background-color: rgba(var(--bento-primary-rgb, 99, 102, 241), 0.1);
-  color: var(--bento-primary-color, #6366f1);
+.bento-badge-medium {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
 }
 
-.bento-badge.subtle.secondary {
-  background-color: rgba(var(--bento-secondary-rgb, 236, 72, 153), 0.1);
-  color: var(--bento-secondary-color, #ec4899);
+.bento-badge-large {
+  padding: 0.375rem 0.675rem;
+  font-size: 0.85rem;
 }
 
-.bento-badge.subtle.tertiary {
-  background-color: rgba(var(--bento-tertiary-rgb, 245, 158, 11), 0.1);
-  color: var(--bento-tertiary-color, #f59e0b);
+.bento-badge-rounded {
+  border-radius: 9999px;
 }
 
-.bento-badge.glow {
-  box-shadow: 0 0 12px rgba(var(--bento-primary-rgb, 99, 102, 241), 0.5);
+.bento-badge-glow {
+  box-shadow: 0 0 8px var(--badge-color, var(--bento-accent));
 }
 
-.bento-badge.glow.secondary {
-  box-shadow: 0 0 12px rgba(var(--bento-secondary-rgb, 236, 72, 153), 0.5);
+.bento-badge-pulse {
+  animation: bento-badge-pulse 2s infinite;
 }
 
-.bento-badge.glow.tertiary {
-  box-shadow: 0 0 12px rgba(var(--bento-tertiary-rgb, 245, 158, 11), 0.5);
+@keyframes bento-badge-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
