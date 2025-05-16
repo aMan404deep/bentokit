@@ -1,6 +1,6 @@
 {
   "name": "bentokitui",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "A lightweight, customizable Bento-style UI library for HTML, CSS, and React.",
   "main": "components/index.js",
   "module": "components/index.js",

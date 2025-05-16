@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BentoKit UI Examples</title>
+  <link rel="stylesheet" href="../styles/bentokit.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: var(--bento-bg);
+      color: var(--bento-text);
+      padding: 2rem;
+      margin: 0;
+    }
+    
+    .section {
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    
+    .section-description {
+      color: var(--bento-muted);
+      margin-bottom: 1.5rem;
+    }
+    
+    .example {
+      margin-bottom: 2rem;
+    }
+    
+    .example-title {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .theme-switcher {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .theme-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      border: 1px solid var(--bento-border);
+      background-color: transparent;
+      color: var(--bento-text);
+    }
+    
+    .theme-btn.active {
+      background-color: var(--bento-accent);
+      color: black;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo-icon {
+      font-size: 1.75rem;
+    }
+    
+    .code-block {
+      background-color: rgba(0,0,0,0.2);
+      padding: 1rem;
+      border-radius: var(--bento-radius);
+      margin-top: 1rem;
+      overflow: auto;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body class="bento-theme-dark">
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🧩</span> BentoKit UI
+    </div>
+    <div class="theme-switcher">
+      <button class="theme-btn active" data-theme="dark">Dark</button>
+      <button class="theme-btn" data-theme="light">Light</button>
+      <button class="theme-btn" data-theme="cyber">Cyber</button>
+      <button class="theme-btn" data-theme="pastel">Pastel</button>
+    </div>
+  </header>
+
+  <div class="section">
+    <h2 class="section-title">Cards and Grid Layout</h2>
+    <p class="section-description">Explore different card styles and grid layouts</p>
+    
+    <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+      <div class="bento-card bento-glow">
+        <h3 class="bento-title">Glow Effect</h3>
+        <p class="bento-description">This card features a beautiful glow effect on hover.</p>
+        <button class="bento-button bento-button-ripple">Learn More</button>
+      </div>
+      
+      <div class="bento-card bento-glass">
+        <h3 class="bento-title">Glass Morphism</h3>
+        <p class="bento-description">Glass morphism creates a frosted glass effect.</p>
+        <button class="bento-button bento-button-secondary">Explore</button>
+      </div>
+      
+      <div class="bento-card bento-depth">
+        <h3 class="bento-title">Depth Effect</h3>
+        <p class="bento-description">This card has a subtle 3D depth effect.</p>
+        <button class="bento-button bento-button-tertiary">View Details</button>
+      </div>
+      
+      <div class="bento-card bento-border-highlight bento-animate-float">
+        <h3 class="bento-title">Floating Animation</h3>
+        <p class="bento-description">Cards can have subtle animations like this floating effect.</p>
+        <button class="bento-button bento-button-outline">See More</button>
+      </div>
+      
+      <div class="bento-card bento-animate-breathe" style="grid-column: span 2;">
+        <h3 class="bento-title">Breathing Animation</h3>
+        <p class="bento-description">This wider card demonstrates the breathing animation effect and spans two columns.</p>
+        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+          <button class="bento-button">Primary</button>
+          <button class="bento-button bento-button-secondary">Secondary</button>
+          <button class="bento-button bento-button-tertiary">Tertiary</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="code-block">
+&lt;div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;"&gt;
+  &lt;div class="bento-card bento-glow"&gt;
+    &lt;h3 class="bento-title"&gt;Glow Effect&lt;/h3&gt;
+    &lt;p class="bento-description"&gt;This card features a beautiful glow effect on hover.&lt;/p&gt;
+    &lt;button class="bento-button bento-button-ripple"&gt;Learn More&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- More cards here... --&gt;
+&lt;/div&gt;
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Buttons and Interactive Elements</h2>
+    <p class="section-description">Stylish buttons with various effects and states</p>
+    
+    <div class="example">
+      <h3 class="example-title">Button Variants</h3>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button class="bento-button">Primary</button>
+        <button class="bento-button bento-button-secondary">Secondary</button>
+        <button class="bento-button bento-button-tertiary">Tertiary</button>
+        <button class="bento-button bento-button-outline">Outline</button>
+        <button class="bento-button bento-button-ripple">With Ripple</button>
+        <button class="bento-button bento-animate-pulse">Pulsing</button>
+      </div>
+      
+      <div class="code-block">
+&lt;button class="bento-button"&gt;Primary&lt;/button&gt;
+&lt;button class="bento-button bento-button-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="bento-button bento-button-tertiary"&gt;Tertiary&lt;/button&gt;
+&lt;button class="bento-button bento-button-outline"&gt;Outline&lt;/button&gt;
+&lt;button class="bento-button bento-button-ripple"&gt;With Ripple&lt;/button&gt;
+&lt;button class="bento-button bento-animate-pulse"&gt;Pulsing&lt;/button&gt;
+      </div>
+    </div>
+    
+    <div class="example">
+      <h3 class="example-title">Switch Controls</h3>
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+        <div class="bento-switch-container">
+          <span class="bento-switch-label">Dark Mode</span>
+          <label class="bento-switch bento-switch-medium">
+            <input type="checkbox" class="bento-switch-input" checked>
+            <span class="bento-switch-track">
+              <span class="bento-switch-thumb"></span>
+            </span>
+          </label>
+        </div>
+        
+        <div class="bento-switch-container">
+          <span class="bento-switch-label">Notifications</span>
+          <label class="bento-switch bento-switch-medium" style="--switch-color: var(--bento-secondary);">
+            <input type="checkbox" class="bento-switch-input" checked>
+            <span class="bento-switch-track">
+              <span class="bento-switch-thumb"></span>
+            </span>
+          </label>
+        </div>
+        
+        <div class="bento-switch-container bento-switch-label-left">
+          <span class="bento-switch-label">Left Label</span>
+          <label class="bento-switch bento-switch-medium" style="--switch-color: var(--bento-tertiary);">
+            <input type="checkbox" class="bento-switch-input">
+            <span class="bento-switch-track">
+              <span class="bento-switch-thumb"></span>
+            </span>
+          </label>
+        </div>
+      </div>
+      
+      <div style="display: flex; gap: 2rem; margin-top: 1rem; flex-wrap: wrap;">
+        <div class="bento-switch-container">
+          <span class="bento-switch-label">Small</span>
+          <label class="bento-switch bento-switch-small">
+            <input type="checkbox" class="bento-switch-input">
+            <span class="bento-switch-track">
+              <span class="bento-switch-thumb"></span>
+            </span>
+          </label>
+        </div>
+        
+        <div class="bento-switch-container">
+          <span class="bento-switch-label">Medium</span>
+          <label class="bento-switch bento-switch-medium">
+            <input type="checkbox" class="bento-switch-input">
+            <span class="bento-switch-track">
+              <span class="bento-switch-thumb"></span>
+            </span>
+          </label>
+        </div>
+        
+        <div class="bento-switch-container">
+          <span class="bento-switch-label">Large</span>
+          <label class="bento-switch bento-switch-large">
+            <input type="checkbox" class="bento-switch-input">
+            <span class="bento-switch-track">
+              <span class="bento-switch-thumb"></span>
+            </span>
+          </label>
+        </div>
+        
+        <div class="bento-switch-container">
+          <span class="bento-switch-label">Disabled</span>
+          <label class="bento-switch bento-switch-medium bento-switch-disabled">
+            <input type="checkbox" class="bento-switch-input" disabled>
+            <span class="bento-switch-track">
+              <span class="bento-switch-thumb"></span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Badges and Progress Indicators</h2>
+    <p class="section-description">Status indicators, badges, and progress elements</p>
+    
+    <div class="example">
+      <h3 class="example-title">Badge Variants</h3>
+      <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+        <div class="bento-badge-container">
+          <button class="bento-button">Notifications
+            <span class="bento-badge bento-badge-filled bento-badge-rounded bento-badge-small">5</span>
+          </button>
+        </div>
+        
+        <div class="bento-badge-container">
+          <button class="bento-button bento-button-secondary">Messages
+            <span class="bento-badge bento-badge-filled bento-badge-rounded bento-badge-small" style="--badge-color: var(--bento-secondary);">3</span>
+          </button>
+        </div>
+        
+        <div class="bento-badge-container">
+          <button class="bento-button bento-button-outline">Updates
+            <span class="bento-badge bento-badge-outline bento-badge-rounded bento-badge-small">New</span>
+          </button>
+        </div>
+        
+        <div class="bento-badge-container">
+          <button class="bento-button bento-button-tertiary">Status
+            <span class="bento-badge bento-badge-filled bento-badge-rounded bento-badge-small bento-badge-pulse" style="--badge-color: var(--bento-tertiary);">Live</span>
+          </button>
+        </div>
+      </div>
+      
+      <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+        <span class="bento-badge bento-badge-filled bento-badge-rounded bento-badge-medium">Default</span>
+        <span class="bento-badge bento-badge-outline bento-badge-rounded bento-badge-medium">Outline</span>
+        <span class="bento-badge bento-badge-subtle bento-badge-rounded bento-badge-medium">Subtle</span>
+        <span class="bento-badge bento-badge-filled bento-badge-rounded bento-badge-medium bento-badge-glow">Glow</span>
+        <span class="bento-badge bento-badge-filled bento-badge-rounded bento-badge-medium bento-badge-pulse">Pulse</span>
+      </div>
+      
+      <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+        <span class="bento-badge bento-badge-filled bento-badge-rounded bento-badge-small">Small</span>
+        <span class="bento-badge bento-badge-filled bento-badge-rounded bento-badge-medium">Medium</span>
+        <span class="bento-badge bento-badge-filled bento-badge-rounded bento-badge-large">Large</span>
+      </div>
+    </div>
+    
+    <div class="example">
+      <h3 class="example-title">Progress Bars</h3>
+      <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px;">
+        <div class="bento-progress-container">
+          <div class="bento-progress bento-progress-medium">
+            <div class="bento-progress-fill" style="width: 75%;"></div>
+          </div>
+          <div class="bento-progress-value">75/100</div>
+        </div>
+        
+        <div class="bento-progress-container">
+          <div class="bento-progress bento-progress-medium bento-progress-striped">
+            <div class="bento-progress-fill" style="width: 45%; background-color: var(--bento-secondary);"></div>
+          </div>
+          <div class="bento-progress-value">45/100</div>
+        </div>
+        
+        <div class="bento-progress-container">
+          <div class="bento-progress bento-progress-large bento-progress-animated">
+            <div class="bento-progress-fill" style="width: 60%; background-color: var(--bento-tertiary);"></div>
+          </div>
+          <div class="bento-progress-value">60/100</div>
+        </div>
+        
+        <div class="bento-progress-container">
+          <div class="bento-progress bento-progress-medium bento-progress-glow">
+            <div class="bento-progress-fill" style="width: 90%;"></div>
+          </div>
+          <div class="bento-progress-value">90/100</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="example">
+      <h3 class="example-title">Spinners</h3>
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+        <div class="bento-spinner">
+          <div class="bento-spinner-ring" style="width: 24px; height: 24px; border-width: 2px;"></div>
+        </div>
+        
+        <div class="bento-spinner">
+          <div class="bento-spinner-ring" style="width: 40px; height: 40px; border-width: 4px; border-color: var(--bento-secondary) transparent transparent transparent;"></div>
+        </div>
+        
+        <div class="bento-spinner">
+          <div class="bento-spinner-ring" style="width: 60px; height: 60px; border-width: 6px; border-color: var(--bento-tertiary) transparent transparent transparent;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Dividers and Layout Elements</h2>
+    <p class="section-description">Visual dividers and layout helpers</p>
+    
+    <div class="example">
+      <h3 class="example-title">Horizontal Dividers</h3>
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        <div class="bento-divider bento-divider-horizontal bento-divider-solid"></div>
+        
+        <div class="bento-divider bento-divider-horizontal bento-divider-dashed"></div>
+        
+        <div class="bento-divider bento-divider-horizontal bento-divider-dotted"></div>
+        
+        <div class="bento-divider bento-divider-horizontal bento-divider-with-text">
+          <span class="bento-divider-text">With Text</span>
+        </div>
+        
+        <div class="bento-divider bento-divider-horizontal bento-divider-gradient" style="border-image: linear-gradient(to right, transparent, var(--bento-accent), transparent) 1;"></div>
+      </div>
+    </div>
+    
+    <div class="example">
+      <h3 class="example-title">Layout with Cards and Dividers</h3>
+      <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+        <div class="bento-card">
+          <h3 class="bento-title">Section Title</h3>
+          <div class="bento-divider bento-divider-horizontal bento-divider-solid" style="margin: 0.75rem 0;"></div>
+          <p class="bento-description">Content separated by a simple solid divider.</p>
+        </div>
+        
+        <div class="bento-card">
+          <h3 class="bento-title">Section Title</h3>
+          <div class="bento-divider bento-divider-horizontal bento-divider-gradient" style="border-image: linear-gradient(to right, transparent, var(--bento-secondary), transparent) 1; margin: 0.75rem 0;"></div>
+          <p class="bento-description">Content separated by a gradient divider.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme switcher functionality
+    const themeBtns = document.querySelectorAll('.theme-btn');
+    const body = document.body;
+    
+    themeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        themeBtns.forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        // Remove all theme classes
+        body.classList.remove('bento-theme-dark', 'bento-theme-light', 'bento-theme-cyber', 'bento-theme-pastel');
+        
+        // Add new theme class
+        const theme = btn.dataset.theme;
+        body.classList.add(`bento-theme-${theme}`);
+      });
+    });
+    
+    // Add ripple effect to buttons with ripple class
+    document.addEventListener('click', function(e) {
+      const target = e.target;
+      if (target.classList.contains('bento-button-ripple')) {
+        // Remove any existing ripple spans
+        const rippleSpans = target.querySelectorAll('.ripple-effect');
+        rippleSpans.forEach(span => span.remove());
+        
+        // Create ripple span
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple-effect');
+        
+        // Calculate position and size
+        const rect = target.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        // Set ripple style
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        
+        // Add ripple to button
+        target.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      }
+    });
+  </script>
+</body>
+</html>
