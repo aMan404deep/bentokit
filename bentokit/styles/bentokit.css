@@ -201,10 +201,27 @@
 
 /* Glass morphism effect */
 .bento-glass {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(37, 37, 37, 0.25) !important; /* Override base card background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Glass effect overrides for light mode */
+.bento-theme-light .bento-glass {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure hover doesn't break the glass effect */
+.bento-glass:hover {
+  background-color: rgba(37, 37, 37, 0.35) !important; /* Slightly darker on hover */
+}
+
+.bento-theme-light .bento-glass:hover {
+  background-color: rgba(255, 255, 255, 0.35) !important;
 }
 
 /* BentoButton */
