@@ -1,6 +1,6 @@
 # README.md
 
-# BentoKit 🧩
+# BentoKitUI 🧩
 
 A lightweight, fully customizable Bento-style UI library you can use in **HTML**, **CSS**, and **React**.
 
@@ -21,8 +21,8 @@ npm install bentokitui
 
 ### React
 ```jsx
-import { BentoCard, BentoGrid } from 'bentokit';
-import 'bentokit/styles/bentokit.css';
+import { BentoCard, BentoGrid } from 'bentokitui';
+import 'bentokitui/styles/bentokit.css';
 
 <BentoGrid columns={3}>
   <BentoCard title="Hi!" description="I'm a Bento card" />
