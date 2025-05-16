@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BentoKit – Bento UI Library</title>
+  <link rel="stylesheet" href="../styles/bentokit.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: var(--bento-bg);
+      color: var(--bento-text);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      padding: 1.5rem;
+      border-radius: var(--bento-radius);
+      background: var(--bento-surface);
+      box-shadow: var(--bento-shadow);
+    }
+    code {
+      background: #111;
+      color: #0f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍱 BentoKit</h1>
+  <p>A lightweight, flexible Bento-style UI library for HTML, CSS & React.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>🔧 Installation</h2>
+      <p><strong>React:</strong></p>
+      <code>npm install bentokit</code>
+      <p><strong>HTML/CSS:</strong></p>
+      <code>&lt;link rel="stylesheet" href="bentokit.css" /&gt;</code>
+    </div>
+
+    <div class="card">
+      <h2>📦 Components</h2>
+      <ul>
+        <li>BentoCard</li>
+        <li>BentoGrid</li>
+        <li>BentoButton</li>
+        <li>BentoImage</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🎨 Theming</h2>
+      <p>Override CSS variables to apply your own theme:</p>
+      <code>:root { --bento-primary: #f0a; }</code>
+    </div>
+
+    <div class="card">
+      <h2>📖 Docs</h2>
+      <p>See <a href="https://github.com/yourusername/bentokit">GitHub</a> for full documentation.</p>
+    </div>
+  </div>
+</body>
+</html>
